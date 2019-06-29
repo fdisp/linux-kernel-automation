@@ -40,7 +40,7 @@ clear
 #generate menuconfig
 echo -e "\033[1;5;7m  6/7 - generating the kernel configuration \033[m"
 pushd "linux-$(curl -s https://www.kernel.org | grep -A1 latest_link | tail -n1 | egrep -o '>[^<]+' | egrep -o '[^>]+')"
-make localmodconfig
+make localyesconfig
 paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 sleep 1s
 clear
