@@ -11,7 +11,7 @@ clear
 #download it's hash code
 echo -e "\033[1;5;7m  2/7 - downloading the hash file \033[m"
 kernel_tarball_file_link="wget $(curl -s https://www.kernel.org | grep -A1 latest_link | tail -n1 | egrep -o '[^"]+' | egrep 'tar')"
-kernel_hash_file_link=eval ${hash_file_link::-2}sign
+kernel_hash_file_link=eval ${kernel_tarball_file_link::-2}sign
 paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 sleep 1s
 clear
